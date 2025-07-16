@@ -71,53 +71,11 @@ java -jar build/libs/ssg-alln-mock-0.0.1-SNAPSHOT.jar
 - **서버 URL**: `http://localhost:9710`
 
 ## API 명세
-
-자세한 사항은 제휴사별요청응답_포맷.md를 참고하세요.
-
-### 제휴사1 (MA0001) API
-
-#### 주문 생성
-- **URL**: `POST /api/partner1/orders`
-- **Content-Type**: `application/json`
-
-#### 주문 상태 조회
-- **URL**: `GET /api/partner1/orders/{orderNumber}/status`
-- **파라미터**: PathVariable orderNumber
-
-
-### 제휴사2 (MA0002) API
-
-#### 주문 생성
-- **URL**: `POST /api/partner2/orders`
-
-**응답 예시:**
-```json
-{
-  "status": "SUCCESS",
-  "message": "주문이 성공적으로 생성되었습니다.",
-  "merchantOrderId": "P2_1705297800000",
-  "currentStatus": "ORDER_RECEIVED",
-  "warehouseLocation": "서울창고"
-}
-```
-
-#### 주문 상태 조회
-- **URL**: `GET /api/partner2/orders/{orderId}/status`
-- **파라미터**: PathVariable orderId
-
-### 제휴사3 (MA0003) API
-
-#### 주문 생성
-- **URL**: `POST /api/partner3/orders`
-
-#### 주문 상태 조회
-- **URL**: `GET /api/partner3/orders/{transactionNumber}/status`
-- **파라미터**: PathVariable transactionNumber
-
+자세한 사항은 **제휴사별요청응답_포맷.md**를 참고하세요.
 
 ## 테스트 방법
 
-### 1. CURL을 이용한 테스트
+### CURL을 이용한 테스트
 
 #### 제휴사1 테스트
 **주문 생성:**
@@ -190,11 +148,6 @@ curl -X POST http://localhost:9710/api/partner3/orders \
 ```bash
 curl -X GET http://localhost:9710/api/partner3/orders/ORDER003/status
 ```
-
-### 2. Postman을 이용한 테스트
-- Postman Collection 파일을 제공하여 쉽게 테스트 가능
-- 각 제휴사별로 다른 요청/응답 포맷 확인 가능
-- 환경 변수 설정으로 제휴사별 URL 관리 가능
 
 
 ## 예외 처리
