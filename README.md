@@ -90,8 +90,6 @@ java -jar build/libs/ssg-alln-mock-0.0.1-SNAPSHOT.jar
 #### 주문 생성
 - **URL**: `POST /api/partner2/orders`
 
-*
-
 **응답 예시:**
 ```json
 {
@@ -205,10 +203,10 @@ curl -X GET http://localhost:9710/api/partner3/orders/ORDER003/status
 각 API 호출 시 30% 확률로 다양한 예외 상황이 발생합니다.
 
 #### 예외 종류
-1. **서버 일시적 오류**: "제휴사 {partnerId} 서버 일시적 오류가 발생했습니다."
-2. **API 인증 실패**: "제휴사 {partnerId} API 인증 실패"
-3. **재고 부족**: "제휴사 {partnerId} 재고 부족으로 주문을 처리할 수 없습니다."
-4. **시스템 점검**: "제휴사 {partnerId} 시스템 점검 중입니다."
+1. **서버 일시적 오류**: "제휴사 서버 일시적 오류가 발생했습니다."
+2. **API 인증 실패**: "제휴사 API 인증 실패"
+3. **재고 부족**: "제휴사 재고 부족으로 주문을 처리할 수 없습니다."
+4. **시스템 점검**: "제휴사 시스템 점검 중입니다."
 
 #### 예외 응답 예시
 ```json
@@ -216,7 +214,7 @@ curl -X GET http://localhost:9710/api/partner3/orders/ORDER003/status
   "timestamp": "2024-01-15T14:30:00",
   "status": 500,
   "error": "Internal Server Error",
-  "message": "제휴사 MA0002 재고 부족으로 주문을 처리할 수 없습니다.",
+  "message": "제휴사 재고 부족으로 주문을 처리할 수 없습니다.",
   "path": "/api/partner"
 }
 ```
